@@ -12,6 +12,10 @@
   "bugs": "https://github.com/jgarber623/eslint-config/issues",
   "license": "MIT",
   "author": "Jason Garber <jason@sixtwothree.org> (https://sixtwothree.org)",
+  "files": [
+    "eleventy.js",
+    "module.js"
+  ],
   "main": "index.js",
   "repository": "github:jgarber623/eslint-config",
   "scripts": {
