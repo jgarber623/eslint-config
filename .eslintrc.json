@@ -1,6 +1,0 @@
-{
-  "extends": "./index",
-  "env": {
-    "node": true
-  }
-}
