@@ -3,6 +3,7 @@
 Shareable [ESLint](https://eslint.org) configuration.
 
 > **Note**
+>
 > As of v1.0.0, this shareable configuration uses ESLint's new "flat" configuration file format and, thus, may not be suitable for every project. See [the official documentation](https://eslint.org/docs/latest/use/configure/configuration-files-new) for details.
 
 ## Installation
