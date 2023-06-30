@@ -18,14 +18,16 @@
   "main": "index.js",
   "repository": "github:jgarber623/eslint-config",
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "jasmine"
   },
   "engines": {
     "node": ">=16.0.0"
   },
   "devDependencies": {
     "eslint": "^8.43.0",
-    "eslint-config-standard": "^17.1.0"
+    "eslint-config-standard": "^17.1.0",
+    "jasmine": "^5.0.2"
   },
   "peerDependencies": {
     "eslint": ">=8.43.0",
