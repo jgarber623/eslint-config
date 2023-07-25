@@ -28,9 +28,9 @@
     "jasmine": "^5.0.2"
   },
   "peerDependencies": {
-    "eslint": ">=8.43.0",
-    "eslint-config-standard": ">=17.1.0",
-    "globals": ">=13.20.0"
+    "eslint": ">=8.43",
+    "eslint-config-standard": ">=17.1",
+    "globals": ">=13.20"
   },
   "publishConfig": {
     "access": "public"
