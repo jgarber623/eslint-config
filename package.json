@@ -1,7 +1,7 @@
 {
   "name": "@jgarber/eslint-config",
   "version": "1.1.1",
-  "description": "Shareable ESLint configuration.",
+  "description": "Shareable ESLint configurations.",
   "keywords": [
     "eslint",
     "eslintconfig",
@@ -11,6 +11,7 @@
   "bugs": "https://github.com/jgarber623/eslint-config/issues",
   "license": "MIT",
   "author": "Jason Garber <jason@sixtwothree.org> (https://sixtwothree.org)",
+  "files": [],
   "main": "index.js",
   "repository": "github:jgarber623/eslint-config",
   "scripts": {
