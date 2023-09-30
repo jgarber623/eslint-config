@@ -1,5 +1,4 @@
-const config = require('./index');
-
 module.exports = [
-  ...config
+  ...(require('./index')),
+  ...(require('./commonjs'))
 ];
