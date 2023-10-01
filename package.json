@@ -12,6 +12,7 @@
   "license": "MIT",
   "author": "Jason Garber <jason@sixtwothree.org> (https://sixtwothree.org)",
   "files": [
+    "ava.js",
     "commonjs.js"
   ],
   "main": "index.js",
@@ -32,7 +33,8 @@
     "eslint": "^8.50.0"
   },
   "peerDependencies": {
-    "eslint": ">=8.43"
+    "eslint": ">=8.43",
+    "eslint-plugin-ava": ">=14.0.0"
   },
   "publishConfig": {
     "access": "public"
