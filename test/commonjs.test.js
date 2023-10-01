@@ -14,13 +14,13 @@ test('exports an array', t => {
 });
 
 test('loads config and validates correct syntax', async (t) => {
-  const [results] = await eslint.lintText('module.exports = [];\n');
+  const [{ errorCount }] = await eslint.lintText('module.exports = [];\n');
 
-  t.is(results.errorCount, 0);
+  t.is(errorCount, 0);
 });
 
 test('loads config and invalidates incorrect syntax', async (t) => {
-  const [results] = await eslint.lintText('export default [];\n');
+  const [{ errorCount, messages }] = await eslint.lintText('export default [];\n');
 
   const expected = [
     {
@@ -30,10 +30,10 @@ test('loads config and invalidates incorrect syntax', async (t) => {
       message: 'Parsing error: \'import\' and \'export\' may appear only with \'sourceType: module\'',
       nodeType: null,
       ruleId: null,
-      severity: 2,
+      severity: 2
     }
   ];
 
-  t.is(results.errorCount, 1);
-  t.deepEqual(results.messages, expected);
+  t.is(errorCount, 1);
+  t.deepEqual(messages, expected);
 });

@@ -14,13 +14,13 @@ test('exports an array', t => {
 });
 
 test('loads config and validates correct syntax', async (t) => {
-  const [results] = await eslint.lintText(';\n');
+  const [{ errorCount }] = await eslint.lintText(';\n');
 
-  t.is(results.errorCount, 0);
+  t.is(errorCount, 0);
 });
 
 test('loads config and invalidates incorrect syntax', async (t) => {
-  const [results] = await eslint.lintText('(() => {}) ()\n');
+  const [{ errorCount, messages }] = await eslint.lintText('(() => {}) ()\n');
 
   const expected = [
     {
@@ -49,6 +49,6 @@ test('loads config and invalidates incorrect syntax', async (t) => {
     }
   ];
 
-  t.is(results.errorCount, 2);
-  t.deepEqual(results.messages, expected);
+  t.is(errorCount, 2);
+  t.deepEqual(messages, expected);
 });
