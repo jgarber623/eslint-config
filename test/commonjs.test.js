@@ -1,7 +1,7 @@
 const test = require('ava');
 const { FlatESLint } = require('eslint/use-at-your-own-risk');
 
-const config = require('../commonjs');
+const config = require('@jgarber/eslint-config/commonjs');
 
 let eslint;
 
