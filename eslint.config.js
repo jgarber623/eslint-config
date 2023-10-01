@@ -1,4 +1,5 @@
 module.exports = [
   ...(require('./index')),
-  ...(require('./commonjs'))
+  ...(require('./commonjs')),
+  ...(require('./ava.js'))
 ];
