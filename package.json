@@ -3,10 +3,13 @@
   "version": "1.1.1",
   "description": "Shareable ESLint configuration.",
   "keywords": [
+    "config",
+    "configuration",
+    "eslint-config",
     "eslint",
     "eslintconfig",
-    "eleventy",
-    "javascript"
+    "javascript",
+    "lint"
   ],
   "homepage": "https://github.com/jgarber623/eslint-config",
   "bugs": "https://github.com/jgarber623/eslint-config/issues",
