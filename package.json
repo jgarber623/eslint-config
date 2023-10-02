@@ -19,7 +19,8 @@
     "lib/*"
   ],
   "exports": {
-    ".": "./lib/index.js"
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
   },
   "repository": "github:jgarber623/eslint-config",
   "scripts": {
@@ -28,6 +29,10 @@
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@eslint/eslintrc": "^2.1.2",
+    "eslint-config-standard": "^17.1.0"
   },
   "devDependencies": {
     "ava": "^5.3.1",
