@@ -1,11 +1,14 @@
 name: CI
 
-on: push
+on:
+  pull_request:
+  workflow_call:
+  workflow_dispatch:
 
 jobs:
   lint:
     name: Lint files
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
@@ -16,12 +19,15 @@ jobs:
       - run: npm run lint
   test:
     name: Test files
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [18, 20]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
-          node-version-file: ".nvmrc"
+          node-version: ${{ matrix.version }}
           cache: npm
       - run: npm ci
       - run: npm test
