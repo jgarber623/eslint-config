@@ -1,5 +1,5 @@
 module.exports = [
-  ...(require('@jgarber/eslint-config')),
-  ...(require('@jgarber/eslint-config/commonjs')),
-  ...(require('@jgarber/eslint-config/ava'))
+  ...(require('./index')),
+  ...(require('./lib/commonjs')),
+  ...(require('./lib/ava'))
 ];
