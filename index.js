@@ -1,5 +1,6 @@
 /**
- * This package's default configuration.
+ * This package's default configuration which includes ESLint configuration for
+ * JavaScript files and JavaScript fenced code blocks within Markdown files.
  *
  * @example
  * // eslint.config.js
