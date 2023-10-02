@@ -1,6 +1,6 @@
 const test = require('ava');
 
-const config = require('../lib/index');
+const config = require('../lib');
 const eslint = require('./helpers/eslint')(config);
 
 test('exports an array', t => {
