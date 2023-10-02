@@ -12,7 +12,12 @@
   "bugs": "https://github.com/jgarber623/eslint-config/issues",
   "license": "MIT",
   "author": "Jason Garber <jason@sixtwothree.org> (https://sixtwothree.org)",
-  "main": "index.js",
+  "files": [
+    "lib/*"
+  ],
+  "exports": {
+    ".": "./lib/index.js"
+  },
   "repository": "github:jgarber623/eslint-config",
   "scripts": {
     "lint": "eslint .",

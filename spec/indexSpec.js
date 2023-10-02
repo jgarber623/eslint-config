@@ -1,6 +1,6 @@
 const { FlatESLint } = require('eslint/use-at-your-own-risk');
 
-const config = require('../index');
+const config = require('../lib/index');
 
 it('exports an Array', () => {
   expect(Array.isArray(config)).toBe(true);
