@@ -17,11 +17,14 @@ jobs:
   test:
     name: Test files
     runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        version: [18, 20]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
-          node-version-file: ".nvmrc"
+          node-version: ${{ matrix.version }}
           cache: npm
       - run: npm ci
       - run: npm test
