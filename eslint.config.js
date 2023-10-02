@@ -1,6 +1,6 @@
 const globals = require('globals');
 
-const config = require('./index');
+const config = require('./lib/index');
 
 module.exports = [
   ...config,
