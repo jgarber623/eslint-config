@@ -1,13 +1,7 @@
 const test = require('ava');
-const { FlatESLint } = require('eslint/use-at-your-own-risk');
 
-const config = require('@jgarber/eslint-config/commonjs');
-
-let eslint;
-
-test.before(() => {
-  eslint = new FlatESLint({ baseConfig: config });
-});
+const config = require('../lib/commonjs');
+const eslint = require('./helpers/eslint')(config);
 
 test('exports an array', t => {
   t.true(Array.isArray(config));
