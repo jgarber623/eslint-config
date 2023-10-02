@@ -23,12 +23,15 @@
   },
   "repository": "github:jgarber623/eslint-config",
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "c8 ava"
   },
   "engines": {
     "node": ">=18.0.0"
   },
   "devDependencies": {
+    "ava": "^5.3.1",
+    "c8": "^8.0.1",
     "eslint": "^8.46.0",
     "eslint-config-standard": "^17.1.0",
     "globals": "^13.20.0"
