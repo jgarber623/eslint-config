@@ -12,12 +12,14 @@
   "license": "MIT",
   "author": "Jason Garber <jason@sixtwothree.org> (https://sixtwothree.org)",
   "files": [
-    "src/*"
+    "lib/*"
   ],
   "exports": {
-    ".": "./src/index.js",
-    "./ava": "./src/ava.js",
-    "./commonjs": "./src/commonjs.js"
+    ".": "./index.js",
+    "./ava": "./lib/ava.js",
+    "./commonjs": "./lib/commonjs.js",
+    "./markdown": "./lib/markdown.js",
+    "./standard": "./lib/standard.js"
   },
   "repository": "github:jgarber623/eslint-config",
   "scripts": {
@@ -37,7 +39,8 @@
   },
   "peerDependencies": {
     "eslint": ">=8.43",
-    "eslint-plugin-ava": ">=14.0.0"
+    "eslint-plugin-ava": ">=14.0.0",
+    "eslint-plugin-markdown": ">=3.0.1"
   },
   "publishConfig": {
     "access": "public"
