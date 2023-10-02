@@ -23,8 +23,7 @@
   },
   "repository": "github:jgarber623/eslint-config",
   "scripts": {
-    "lint": "eslint .",
-    "test": "jasmine"
+    "lint": "eslint ."
   },
   "engines": {
     "node": ">=18.0.0"
@@ -32,8 +31,7 @@
   "devDependencies": {
     "eslint": "^8.46.0",
     "eslint-config-standard": "^17.1.0",
-    "globals": "^13.20.0",
-    "jasmine": "^5.1.0"
+    "globals": "^13.20.0"
   },
   "peerDependencies": {
     "eslint": ">=8.43",
