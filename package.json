@@ -19,8 +19,9 @@
     "lib/*"
   ],
   "exports": {
+    "./package.json": "./package.json",
     ".": "./lib/index.js",
-    "./package.json": "./package.json"
+    "./commonjs": "./lib/commonjs.js"
   },
   "repository": "github:jgarber623/eslint-config",
   "scripts": {
