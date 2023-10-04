@@ -18,13 +18,13 @@ test('loads config and invalidates incorrect syntax', async (t) => {
 
   const expected = [
     {
-      ruleId: null,
-      fatal: true,
-      severity: 2,
-      message: "Parsing error: 'import' and 'export' may appear only with 'sourceType: module'",
-      line: 1,
       column: 1,
-      nodeType: null
+      fatal: true,
+      line: 1,
+      message: "Parsing error: 'import' and 'export' may appear only with 'sourceType: module'",
+      nodeType: null,
+      ruleId: null,
+      severity: 2
     }
   ];
 

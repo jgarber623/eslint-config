@@ -18,40 +18,40 @@ test('loads config and invalidates incorrect syntax', async (t) => {
 
   const expected = [
     {
-      ruleId: 'array-func/prefer-flat-map',
-      severity: 2,
-      message: 'Use flatMap instead of .map().flat()',
-      line: 1,
       column: 13,
-      nodeType: null,
-      messageId: 'preferFlatMap',
-      endLine: 1,
       endColumn: 25,
-      fix: { range: [12, 24], text: 'flatMap()' }
-    },
-    {
-      ruleId: 'func-call-spacing',
-      severity: 2,
-      message: 'Unexpected whitespace between function name and paren.',
-      line: 1,
-      column: 29,
-      nodeType: 'CallExpression',
-      messageId: 'unexpectedWhitespace',
       endLine: 1,
-      endColumn: 29,
-      fix: { range: [28, 29], text: '' }
+      fix: { range: [12, 24], text: 'flatMap()' },
+      line: 1,
+      message: 'Use flatMap instead of .map().flat()',
+      messageId: 'preferFlatMap',
+      nodeType: null,
+      ruleId: 'array-func/prefer-flat-map',
+      severity: 2
     },
     {
-      ruleId: 'semi',
-      severity: 2,
-      message: 'Missing semicolon.',
+      column: 29,
+      endColumn: 29,
+      endLine: 1,
+      fix: { range: [28, 29], text: '' },
       line: 1,
+      message: 'Unexpected whitespace between function name and paren.',
+      messageId: 'unexpectedWhitespace',
+      nodeType: 'CallExpression',
+      ruleId: 'func-call-spacing',
+      severity: 2
+    },
+    {
       column: 32,
-      nodeType: 'ExpressionStatement',
-      messageId: 'missingSemi',
-      endLine: 2,
       endColumn: 1,
-      fix: { range: [31, 31], text: ';' }
+      endLine: 2,
+      fix: { range: [31, 31], text: ';' },
+      line: 1,
+      message: 'Missing semicolon.',
+      messageId: 'missingSemi',
+      nodeType: 'ExpressionStatement',
+      ruleId: 'semi',
+      severity: 2
     }
   ];
 
