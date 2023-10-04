@@ -16,7 +16,7 @@ test('loads config and validates correct syntax', async (t) => {
 });
 
 test('loads config and invalidates incorrect syntax', async (t) => {
-  const [{ errorCount, messages }] = await eslint.lintText("const foo = require('ava')", {
+  const [{ errorCount, messages }] = await eslint.lintText('const foo = require(\'ava\')', {
     filePath: 'ava.test.js'
   });
 
@@ -29,7 +29,7 @@ test('loads config and invalidates incorrect syntax', async (t) => {
       message: 'AVA should be imported as `test`.',
       nodeType: 'VariableDeclarator',
       ruleId: 'ava/use-test',
-      severity: 2,
+      severity: 2
     }
   ];
 
