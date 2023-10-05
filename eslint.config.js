@@ -5,6 +5,9 @@
  * @see {@link https://nodejs.org/dist/latest-v18.x/docs/api/packages.html#self-referencing-a-package-using-its-name}
  */
 module.exports = [
+  {
+    ignores: ['coverage']
+  },
   ...(require('@jgarber/eslint-config/commonjs')),
   ...(require('@jgarber/eslint-config')),
   ...(require('@jgarber/eslint-config/ava'))
