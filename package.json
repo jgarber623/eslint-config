@@ -33,9 +33,16 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "@eslint/eslintrc": "^2.1.2",
+    "@eslint/js": "^8.50.0",
     "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-ava": "^14.0.0"
+    "eslint-plugin-ava": "^14.0.0",
+    "eslint-plugin-array-func": "^4.0.0",
+    "eslint-plugin-jsdoc": "^46.8.2",
+    "eslint-plugin-n": "^16.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-regexp": "^1.15.0",
+    "eslint-plugin-sort-class-members": "^1.19.0",
+    "eslint-plugin-unicorn": "^48.0.1"
   },
   "devDependencies": {
     "ava": "^5.3.1",

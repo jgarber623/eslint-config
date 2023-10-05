@@ -8,41 +8,57 @@ test('exports an array', t => {
 });
 
 test('loads config and validates correct syntax', async (t) => {
-  const [{ errorCount }] = await eslint.lintText(';\n');
+  const [{ errorCount }] = await eslint.lintText('(() => 1)();\n', {
+    filePath: 'index.test.js'
+  });
 
   t.is(errorCount, 0);
 });
 
 test('loads config and invalidates incorrect syntax', async (t) => {
-  const [{ errorCount, messages }] = await eslint.lintText('(() => {}) ()\n');
+  const [{ errorCount, messages }] = await eslint.lintText('(() => { [].map().flat(); }) ()\n', {
+    filePath: 'index.test.js'
+  });
 
   const expected = [
     {
-      ruleId: 'func-call-spacing',
-      severity: 2,
-      message: 'Unexpected whitespace between function name and paren.',
-      line: 1,
-      column: 11,
-      nodeType: 'CallExpression',
-      messageId: 'unexpectedWhitespace',
+      column: 13,
+      endColumn: 25,
       endLine: 1,
-      endColumn: 11,
-      fix: { range: [10, 11], text: '' }
+      fix: { range: [12, 24], text: 'flatMap()' },
+      line: 1,
+      message: 'Prefer `.flatMap(…)` over `.map(…).flat()`.',
+      messageId: 'prefer-array-flat-map',
+      nodeType: 'CallExpression',
+      ruleId: 'unicorn/prefer-array-flat-map',
+      severity: 2
     },
     {
-      ruleId: 'semi',
-      severity: 2,
-      message: 'Missing semicolon.',
+      column: 29,
+      endColumn: 29,
+      endLine: 1,
+      fix: { range: [28, 29], text: '' },
       line: 1,
-      column: 14,
-      nodeType: 'ExpressionStatement',
-      messageId: 'missingSemi',
-      endLine: 2,
+      message: 'Unexpected whitespace between function name and paren.',
+      messageId: 'unexpectedWhitespace',
+      nodeType: 'CallExpression',
+      ruleId: 'func-call-spacing',
+      severity: 2
+    },
+    {
+      column: 32,
       endColumn: 1,
-      fix: { range: [13, 13], text: ';' }
+      endLine: 2,
+      fix: { range: [31, 31], text: ';' },
+      line: 1,
+      message: 'Missing semicolon.',
+      messageId: 'missingSemi',
+      nodeType: 'ExpressionStatement',
+      ruleId: 'semi',
+      severity: 2
     }
   ];
 
-  t.is(errorCount, 2);
+  t.is(errorCount, 3);
   t.deepEqual(messages, expected);
 });
