@@ -8,7 +8,7 @@ test('exports an array', t => {
 });
 
 test('loads config and validates correct syntax', async (t) => {
-  const [{ errorCount }] = await eslint.lintText(';\n');
+  const [{ errorCount }] = await eslint.lintText('(() => 1)();\n');
 
   t.is(errorCount, 0);
 });

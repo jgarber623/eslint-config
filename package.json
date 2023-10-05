@@ -33,6 +33,7 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
+    "@eslint/js": "^8.50.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-ava": "^14.0.0",
     "eslint-plugin-array-func": "^4.0.0",
