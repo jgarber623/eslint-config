@@ -8,13 +8,17 @@ test('exports an array', t => {
 });
 
 test('loads config and validates correct syntax', async (t) => {
-  const [{ errorCount }] = await eslint.lintText('(() => 1)();\n');
+  const [{ errorCount }] = await eslint.lintText('(() => 1)();\n', {
+    filePath: 'index.test.js'
+  });
 
   t.is(errorCount, 0);
 });
 
 test('loads config and invalidates incorrect syntax', async (t) => {
-  const [{ errorCount, messages }] = await eslint.lintText('(() => { [].map().flat(); }) ()\n');
+  const [{ errorCount, messages }] = await eslint.lintText('(() => { [].map().flat(); }) ()\n', {
+    filePath: 'index.test.js'
+  });
 
   const expected = [
     {
@@ -23,10 +27,10 @@ test('loads config and invalidates incorrect syntax', async (t) => {
       endLine: 1,
       fix: { range: [12, 24], text: 'flatMap()' },
       line: 1,
-      message: 'Use flatMap instead of .map().flat()',
-      messageId: 'preferFlatMap',
-      nodeType: null,
-      ruleId: 'array-func/prefer-flat-map',
+      message: 'Prefer `.flatMap(…)` over `.map(…).flat()`.',
+      messageId: 'prefer-array-flat-map',
+      nodeType: 'CallExpression',
+      ruleId: 'unicorn/prefer-array-flat-map',
       severity: 2
     },
     {
