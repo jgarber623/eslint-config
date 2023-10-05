@@ -42,6 +42,7 @@
     "eslint-plugin-n": "^16.1.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-regexp": "^1.15.0",
+    "eslint-plugin-sort-class-members": "^1.19.0",
     "eslint-plugin-unicorn": "^48.0.1"
   },
   "devDependencies": {
