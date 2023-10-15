@@ -27,10 +27,10 @@ test('loads config and invalidates incorrect syntax', async (t) => {
       endLine: 1,
       fix: { range: [12, 24], text: 'flatMap()' },
       line: 1,
-      message: 'Prefer `.flatMap(…)` over `.map(…).flat()`.',
-      messageId: 'prefer-array-flat-map',
-      nodeType: 'CallExpression',
-      ruleId: 'unicorn/prefer-array-flat-map',
+      message: 'Use flatMap instead of .map().flat()',
+      messageId: 'preferFlatMap',
+      nodeType: null,
+      ruleId: 'array-func/prefer-flat-map',
       severity: 2
     },
     {
