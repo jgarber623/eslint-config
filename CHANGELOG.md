@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.0.0 (2023-10-15)
+
+- [`542e8ce`](https://github.com/jgarber623/eslint-config/commit/542e8ce) feat: Configure sort-imports (#32)
+- [`7ff11bb`](https://github.com/jgarber623/eslint-config/commit/7ff11bb) fix: Use jsdoc/recommended config (#31)
+- [`3526446`](https://github.com/jgarber623/eslint-config/commit/3526446) breaking: Upgrade dependencies (#30)
+- [`c39f900`](https://github.com/jgarber623/eslint-config/commit/c39f900) fix: Address miscellaneous configuration issues (#29)
+
 ## 2.0.0 (2023-10-05)
 
 - [`445f87c`](https://github.com/jgarber623/eslint-config/commit/445f87c) breaking: Add more plugins (#19)
