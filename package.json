@@ -33,7 +33,7 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "@eslint/js": "^8.50.0",
+    "@eslint/js": "^8.51.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-ava": "^14.0.0",
     "eslint-plugin-array-func": "^4.0.0",
@@ -47,10 +47,10 @@
   "devDependencies": {
     "ava": "^5.3.1",
     "c8": "^8.0.1",
-    "eslint": "^8.50.0"
+    "eslint": "^8.51.0"
   },
   "peerDependencies": {
-    "eslint": ">=8.50.0"
+    "eslint": ">=8.51.0"
   },
   "publishConfig": {
     "access": "public"
