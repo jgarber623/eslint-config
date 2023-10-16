@@ -29,9 +29,6 @@
     "lint": "eslint .",
     "test": "c8 ava"
   },
-  "engines": {
-    "node": ">=18.0.0"
-  },
   "dependencies": {
     "@eslint/js": "^8.51.0",
     "eslint-config-standard": "^17.1.0",
@@ -51,6 +48,9 @@
   },
   "peerDependencies": {
     "eslint": ">=8.51.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "publishConfig": {
     "access": "public"
