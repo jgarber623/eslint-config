@@ -7,7 +7,7 @@ on:
 
 jobs:
   lint:
-    name: Lint files
+    name: Lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,7 +18,7 @@ jobs:
       - run: npm ci
       - run: npm run lint
   test:
-    name: Test files
+    name: Test Node.js v${{ matrix.version }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
