@@ -1,64 +1,80 @@
-const test = require('ava');
+import assert from "node:assert";
+import test from "node:test";
 
-const config = require('@jgarber/eslint-config');
-const eslint = require('./helpers/eslint')(config);
+import config from "@jgarber/eslint-config";
 
-test('exports an array', t => {
-  t.true(Array.isArray(config));
+import riskyLint from "eslint/use-at-your-own-risk";
+
+const eslint = new riskyLint.FlatESLint({
+  baseConfig: config,
+  overrideConfigFile: true,
 });
 
-test('loads config and validates correct syntax', async (t) => {
-  const [{ errorCount }] = await eslint.lintText('(() => 1)();\n', {
-    filePath: 'index.test.js'
+test("default export", () => {
+  assert.ok(Array.isArray(config));
+});
+
+test("loads config and validates correct syntax", async () => {
+  const [{ errorCount }] = await eslint.lintText("(() => 1)();\n", {
+    filePath: "index.test.js",
   });
 
-  t.is(errorCount, 0);
+  assert.strictEqual(errorCount, 0);
 });
 
-test('loads config and invalidates incorrect syntax', async (t) => {
-  const [{ errorCount, messages }] = await eslint.lintText('(() => { [].map().flat(); }) ()\n', {
-    filePath: 'index.test.js'
+test("loads config and invalidates incorrect syntax", async () => {
+  const [{ errorCount, messages }] = await eslint.lintText("(() => { [].map().flat(); }) ()\n", {
+    filePath: "index.test.js",
   });
 
   const expected = [
     {
+      column: 10,
+      endColumn: 26,
+      endLine: 1,
+      line: 1,
+      message: "This line has 2 statements. Maximum allowed is 1.",
+      messageId: "exceed",
+      nodeType: "ExpressionStatement",
+      ruleId: "@stylistic/max-statements-per-line",
+      severity: 2,
+    },
+    {
       column: 13,
       endColumn: 25,
       endLine: 1,
-      fix: { range: [12, 24], text: 'flatMap()' },
+      fix: { range: [12, 24], text: "flatMap()" },
       line: 1,
-      message: 'Use flatMap instead of .map().flat()',
-      messageId: 'preferFlatMap',
+      message: "Use flatMap instead of .map().flat()",
+      messageId: "preferFlatMap",
       nodeType: null,
-      ruleId: 'array-func/prefer-flat-map',
-      severity: 2
+      ruleId: "array-func/prefer-flat-map",
+      severity: 2,
     },
     {
-      column: 29,
-      endColumn: 29,
-      endLine: 1,
-      fix: { range: [28, 29], text: '' },
+      column: 28,
+      fix: { range: [28, 29], text: "" },
       line: 1,
-      message: 'Unexpected whitespace between function name and paren.',
-      messageId: 'unexpectedWhitespace',
-      nodeType: 'CallExpression',
-      ruleId: 'func-call-spacing',
-      severity: 2
+      message: "Unexpected whitespace between function name and paren.",
+      messageId: "unexpectedWhitespace",
+      nodeType: "CallExpression",
+      ruleId: "@stylistic/function-call-spacing",
+      severity: 2,
     },
     {
       column: 32,
       endColumn: 1,
       endLine: 2,
-      fix: { range: [31, 31], text: ';' },
+      fix: { range: [31, 31], text: ";" },
       line: 1,
-      message: 'Missing semicolon.',
-      messageId: 'missingSemi',
-      nodeType: 'ExpressionStatement',
-      ruleId: 'semi',
-      severity: 2
-    }
+      message: "Missing semicolon.",
+      messageId: "missingSemi",
+      nodeType: "ExpressionStatement",
+      ruleId: "@stylistic/semi",
+      severity: 2,
+    },
   ];
 
-  t.is(errorCount, 3);
-  t.deepEqual(messages, expected);
+  assert.strictEqual(errorCount, 4);
+  assert.deepEqual(messages, expected);
 });
