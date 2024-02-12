@@ -103,7 +103,7 @@ export default [
       "@stylistic/linebreak-style": "warn",
 
       /**
-       * Enforces a maximum line length to increase code readability and
+       * Enforce a maximum line length to increase code readability and
        * maintainability.
        *
        * @see {@link https://eslint.style/rules/default/max-len}
@@ -129,6 +129,13 @@ export default [
        * @see {@link https://eslint.style/rules/default/no-confusing-arrow}
        */
       "@stylistic/no-confusing-arrow": "warn",
+
+      /**
+       * Enforce a consistent linebreak style for operators.
+       *
+       * @see {@link https://eslint.style/rules/default/operator-linebreak}
+       */
+      "@stylistic/operator-linebreak": ["error", "after"],
 
       /**
        * Enforce consistent spacing before function parentheses.
@@ -158,11 +165,21 @@ export default [
       "jsdoc/sort-tags": ["warn"],
 
       /**
-       * Enforces lines (or no lines) between tags.
+       * Enforce lines (or no lines) between tags.
        *
        * @see {@link https://github.com/gajus/eslint-plugin-jsdoc/blob/HEAD/docs/rules/tag-lines.md}
        */
       "jsdoc/tag-lines": ["warn", "any", { startLines: 1 }],
+
+      /**
+       * Disallow unused variables.
+       *
+       * @see {@link https://eslint.org/docs/latest/rules/no-unused-vars}
+       */
+      "no-unused-vars": ["error", {
+        argsIgnorePattern: "^_",
+        destructuredArrayIgnorePattern: "^_",
+      }],
 
       /**
        * Enforce sorted import declarations within modules.
