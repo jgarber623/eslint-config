@@ -1,6 +1,6 @@
 {
   "name": "@jgarber/eslint-config",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Shareable ESLint configuration.",
   "keywords": [
     "config",
@@ -16,41 +16,36 @@
   "license": "MIT",
   "author": "Jason Garber <jason@sixtwothree.org> (https://sixtwothree.org)",
   "files": [
-    "lib/*"
+    "index.cjs",
+    "index.js"
   ],
+  "type": "module",
   "exports": {
-    "./package.json": "./package.json",
-    ".": "./lib/index.js",
-    "./ava": "./lib/ava.js",
-    "./commonjs": "./lib/commonjs.js"
+    "import": "./index.js",
+    "require": "./index.cjs"
   },
   "repository": "github:jgarber623/eslint-config",
   "scripts": {
     "lint": "eslint .",
-    "test": "c8 ava"
+    "test": "NODE_V8_COVERAGE=coverage node --experimental-test-coverage --test"
   },
   "dependencies": {
-    "@eslint/js": "^8.51.0",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-ava": "^14.0.0",
-    "eslint-plugin-array-func": "^4.0.0",
-    "eslint-plugin-jsdoc": "^46.8.2",
-    "eslint-plugin-n": "^16.2.0",
-    "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-regexp": "^2.1.1",
-    "eslint-plugin-sort-class-members": "^1.19.0",
-    "eslint-plugin-unicorn": "^48.0.1"
+    "@eslint/js": "^8.56.0",
+    "@stylistic/eslint-plugin": "^1.6.1",
+    "eslint-plugin-array-func": "^5.0.1",
+    "eslint-plugin-jsdoc": "^48.0.6",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-regexp": "^2.2.0",
+    "eslint-plugin-sort-class-members": "^1.19.0"
   },
   "devDependencies": {
-    "ava": "^6.0.1",
-    "c8": "^8.0.1",
-    "eslint": "^8.51.0"
+    "eslint": "^8.56.0"
   },
   "peerDependencies": {
-    "eslint": ">=8.51.0"
+    "eslint": ">=8.56.0"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
   },
   "publishConfig": {
     "access": "public"
