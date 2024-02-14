@@ -138,6 +138,14 @@ export default [
       "@stylistic/operator-linebreak": ["error", "after"],
 
       /**
+       * Disallow quotes around object literal property names that are not
+       * strictly required.
+       *
+       * @see {@link https://eslint.style/rules/default/quote-props}
+       */
+      "@stylistic/quote-props": ["error", "as-needed"],
+
+      /**
        * Enforce consistent spacing before function parentheses.
        *
        * @see {@link https://eslint.style/rules/js/space-before-function-paren}
