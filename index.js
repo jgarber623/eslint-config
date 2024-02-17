@@ -53,10 +53,7 @@ export default [
   /**
    * @see {@link https://www.npmjs.com/package/eslint-plugin-sort-class-members}
    */
-  {
-    plugins: { "sort-class-members": sortClassMembers },
-    rules: sortClassMembers.configs.recommended.rules,
-  },
+  sortClassMembers.configs["flat/recommended"],
 
   /**
    * @see {@link https://www.npmjs.com/package/@jgarber/eslint-config}
