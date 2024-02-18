@@ -1,6 +1,6 @@
 {
   "name": "@jgarber/eslint-config",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "description": "Shareable ESLint configuration.",
   "keywords": [
     "config",
