@@ -165,9 +165,9 @@ export default [
        * Sorts tags by a specified sequence according to tag name, optionally
        * adding line breaks between tag groups.
        *
-       * @see {@link https://github.com/gajus/eslint-plugin-jsdoc/blob/HEAD/docs/rules/sort-tags.md#user-content-sort-tags-options-linesbetween}
+       * @see {@link https://github.com/gajus/eslint-plugin-jsdoc/blob/HEAD/docs/rules/sort-tags.md}
        */
-      "jsdoc/sort-tags": ["warn"],
+      "jsdoc/sort-tags": ["warn", { alphabetizeExtras: true }],
 
       /**
        * Enforce lines (or no lines) between tags.
