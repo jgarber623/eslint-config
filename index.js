@@ -43,12 +43,8 @@ export default [
 
   /**
    * @see {@link https://www.npmjs.com/package/eslint-plugin-regexp}
-   * @see {@link https://github.com/ota-meshi/eslint-plugin-regexp/issues/695}
    */
-  {
-    plugins: { regexp },
-    rules: regexp.configs.recommended.rules,
-  },
+  regexp.configs["flat/recommended"],
 
   /**
    * @see {@link https://www.npmjs.com/package/eslint-plugin-sort-class-members}
