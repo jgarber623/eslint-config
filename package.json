@@ -1,6 +1,6 @@
 {
   "name": "@jgarber/eslint-config",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "Shareable ESLint configuration.",
   "keywords": [
     "config",
@@ -30,19 +30,19 @@
     "test": "NODE_V8_COVERAGE=coverage node --experimental-test-coverage --test"
   },
   "dependencies": {
-    "@eslint/js": "^9.3.0",
-    "@stylistic/eslint-plugin": "^2.1.0",
+    "@eslint/js": "^9.6.0",
+    "@stylistic/eslint-plugin": "^2.6.0-beta.0",
     "eslint-plugin-array-func": "^5.0.1",
-    "eslint-plugin-jsdoc": "^48.2.5",
-    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-jsdoc": "^48.5.0",
+    "eslint-plugin-n": "^17.9.0",
     "eslint-plugin-regexp": "^2.6.0",
     "eslint-plugin-sort-class-members": "^1.20.0"
   },
   "devDependencies": {
-    "eslint": "^9.3.0"
+    "eslint": "^9.6.0"
   },
   "peerDependencies": {
-    "eslint": ">=9.3.0"
+    "eslint": ">=9.6.0"
   },
   "engines": {
     "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
