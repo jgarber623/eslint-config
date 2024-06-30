@@ -17,4 +17,11 @@ export default [
       },
     },
   },
+  {
+    rules: {
+      "n/no-unsupported-features/node-builtins": ["error", {
+        allowExperimental: true,
+      }],
+    },
+  },
 ];
