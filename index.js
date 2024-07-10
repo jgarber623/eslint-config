@@ -172,6 +172,15 @@ export default [
        */
       "jsdoc/tag-lines": ["warn", "any", { startLines: 1 }],
 
+      /*
+       * Disallow unsupported Node.js built-in APIs on the specified version .
+       *
+       * @see {@link https://github.com/eslint-community/eslint-plugin-n/blob/master/docs/rules/no-unsupported-features/node-builtins.md}
+       */
+      "n/no-unsupported-features/node-builtins": ["error", {
+        allowExperimental: true,
+      }],
+
       /**
        * Disallow unused variables.
        *
