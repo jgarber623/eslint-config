@@ -1,11 +1,11 @@
 import assert from "node:assert";
 import test from "node:test";
 
+import { ESLint } from "eslint";
+
 import config from "@jgarber/eslint-config";
 
-import riskyLint from "eslint/use-at-your-own-risk";
-
-const eslint = new riskyLint.FlatESLint({
+const eslint = new ESLint({
   baseConfig: config,
   overrideConfigFile: true,
 });
