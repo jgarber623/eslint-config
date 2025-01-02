@@ -17,18 +17,9 @@ npm install --save-dev @jgarber/eslint-config
 
 ## Usage
 
-Using [ECMAScript module (ESM)](https://nodejs.org/api/esm.html) syntax:
-
 ```js
 // eslint.config.js
 export { default } from "@jgarber/eslint-config";
-```
-
-Using [CommonJS module](https://nodejs.org/api/modules.html) syntax:
-
-```js
-// eslint.config.js
-module.exports = (async () => await require("@jgarber/eslint-config"))();
 ```
 
 ## License

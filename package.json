@@ -1,6 +1,6 @@
 {
   "name": "@jgarber/eslint-config",
-  "version": "6.1.0",
+  "version": "7.0.0",
   "description": "Shareable ESLint configuration.",
   "keywords": [
     "config",
@@ -16,33 +16,29 @@
   "license": "MIT",
   "author": "Jason Garber <jason@sixtwothree.org> (https://sixtwothree.org)",
   "files": [
-    "index.cjs",
     "index.js"
   ],
   "type": "module",
-  "exports": {
-    "import": "./index.js",
-    "require": "./index.cjs"
-  },
   "repository": "github:jgarber623/eslint-config",
+  "exports": "./index.js",
   "scripts": {
-    "lint": "eslint .",
+    "lint": "npx eslint .",
     "test": "NODE_V8_COVERAGE=coverage node --experimental-test-coverage --test"
   },
   "dependencies": {
-    "@eslint/js": "^9.6.0",
-    "@stylistic/eslint-plugin": "^2.6.0-beta.0",
-    "eslint-plugin-array-func": "^5.0.1",
-    "eslint-plugin-jsdoc": "^48.7.0",
-    "eslint-plugin-n": "^17.9.0",
-    "eslint-plugin-regexp": "^2.6.0",
-    "eslint-plugin-sort-class-members": "^1.20.0"
+    "@eslint/js": "^9.17.0",
+    "@stylistic/eslint-plugin": "^2.12.1",
+    "eslint-plugin-array-func": "^5.0.2",
+    "eslint-plugin-jsdoc": "^50.6.1",
+    "eslint-plugin-n": "^17.15.1",
+    "eslint-plugin-regexp": "^2.7.0",
+    "eslint-plugin-sort-class-members": "^1.21.0"
   },
   "devDependencies": {
-    "eslint": "^9.6.0"
+    "eslint": "^9.17.0"
   },
   "peerDependencies": {
-    "eslint": ">=9.6.0"
+    "eslint": ">=9.17.0"
   },
   "engines": {
     "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
