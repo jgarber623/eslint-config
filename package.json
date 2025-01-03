@@ -20,7 +20,7 @@
     "index.js"
   ],
   "exports": "./index.js",
-  "repository": "github:jgarber623/eslint-config",
+  "repository": "https://github.com/jgarber623/eslint-config",
   "scripts": {
     "lint": "npx eslint .",
     "test": "NODE_V8_COVERAGE=coverage node --experimental-test-coverage --test"
@@ -44,6 +44,7 @@
     "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   }
 }
