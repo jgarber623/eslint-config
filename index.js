@@ -1,4 +1,5 @@
-import path from "node:path";
+import { cwd } from "node:process";
+import { resolve } from "node:path";
 
 import { includeIgnoreFile } from "@eslint/compat";
 import js from "@eslint/js";
@@ -14,7 +15,7 @@ export default [
   /**
    * @see {@link https://eslint.org/docs/latest/use/configure/ignore#including-gitignore-files}
    */
-  includeIgnoreFile(path.resolve(import.meta.dirname, ".gitignore")),
+  includeIgnoreFile(resolve(cwd(), ".gitignore")),
 
   /**
    * @see {@link https://www.npmjs.com/package/eslint-plugin-jsdoc}
