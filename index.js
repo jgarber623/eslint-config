@@ -1,3 +1,6 @@
+import path from "node:path";
+
+import { includeIgnoreFile } from "@eslint/compat";
 import js from "@eslint/js";
 import stylistic from "@stylistic/eslint-plugin";
 
@@ -8,6 +11,11 @@ import regexp from "eslint-plugin-regexp";
 import sortClassMembers from "eslint-plugin-sort-class-members";
 
 export default [
+  /**
+   * @see {@link https://eslint.org/docs/latest/use/configure/ignore#including-gitignore-files}
+   */
+  includeIgnoreFile(path.resolve(import.meta.dirname, ".gitignore")),
+
   /**
    * @see {@link https://www.npmjs.com/package/eslint-plugin-jsdoc}
    */
